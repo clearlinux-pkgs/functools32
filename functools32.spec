@@ -4,7 +4,7 @@
 #
 Name     : functools32
 Version  : 3.2.3
-Release  : 10
+Release  : 11
 URL      : https://pypi.python.org/packages/source/f/functools32/functools32-3.2.3-1.tar.gz
 Source0  : https://pypi.python.org/packages/source/f/functools32/functools32-3.2.3-1.tar.gz
 Summary  : Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy.
