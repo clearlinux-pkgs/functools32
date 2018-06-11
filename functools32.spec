@@ -4,13 +4,12 @@
 #
 Name     : functools32
 Version  : 3.2.3.2
-Release  : 20
+Release  : 21
 URL      : http://pypi.debian.net/functools32/functools32-3.2.3-2.tar.gz
 Source0  : http://pypi.debian.net/functools32/functools32-3.2.3-2.tar.gz
 Summary  : Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy.
 Group    : Development/Tools
 License  : Python-2.0
-Requires: functools32-legacypython
 Requires: functools32-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -35,7 +34,6 @@ legacypython components for the functools32 package.
 %package python
 Summary: python components for the functools32 package.
 Group: Default
-Requires: functools32-legacypython
 
 %description python
 python components for the functools32 package.
@@ -49,7 +47,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1512129964
+export SOURCE_DATE_EPOCH=1528753218
 python2 setup.py build -b py2
 
 %install
