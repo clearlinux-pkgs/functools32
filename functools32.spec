@@ -4,7 +4,7 @@
 #
 Name     : functools32
 Version  : 3.2.3.2
-Release  : 21
+Release  : 22
 URL      : http://pypi.debian.net/functools32/functools32-3.2.3-2.tar.gz
 Source0  : http://pypi.debian.net/functools32/functools32-3.2.3-2.tar.gz
 Summary  : Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy.
