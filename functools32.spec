@@ -4,18 +4,16 @@
 #
 Name     : functools32
 Version  : 3.2.3.2
-Release  : 22
+Release  : 23
 URL      : http://pypi.debian.net/functools32/functools32-3.2.3-2.tar.gz
 Source0  : http://pypi.debian.net/functools32/functools32-3.2.3-2.tar.gz
 Summary  : Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy.
 Group    : Development/Tools
 License  : Python-2.0
+Requires: functools32-license
 Requires: functools32-python
-BuildRequires : pbr
-BuildRequires : pip
-
-BuildRequires : python3-dev
-BuildRequires : setuptools
+BuildRequires : buildreq-distutils
+BuildRequires : buildreq-distutils3
 
 %description
 This is a backport of the functools standard library module from
@@ -29,6 +27,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the functools32 package.
+
+
+%package license
+Summary: license components for the functools32 package.
+Group: Default
+
+%description license
+license components for the functools32 package.
 
 
 %package python
@@ -47,11 +53,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528753218
+export SOURCE_DATE_EPOCH=1535060697
 python2 setup.py build -b py2
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/functools32
+cp LICENSE %{buildroot}/usr/share/doc/functools32/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
 
 %files
@@ -60,6 +68,10 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/functools32/LICENSE
 
 %files python
 %defattr(-,root,root,-)
